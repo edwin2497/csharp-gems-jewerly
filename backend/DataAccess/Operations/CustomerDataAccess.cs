@@ -17,7 +17,7 @@ namespace DataAccess
         {
             string parameter = "@ID_CUSTOMER";
             string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_DELETE_CUSTOMERS]");
-            connection.spShowById(Sqlstring, id, parameter);
+            connection.spDeleteById(Sqlstring, id, parameter);
         }
 
         public void Insert(Customer customer)

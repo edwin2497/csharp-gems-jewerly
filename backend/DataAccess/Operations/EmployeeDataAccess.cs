@@ -19,7 +19,7 @@ namespace DataAccess
             {
                 string parameter = "@IDEMPLOYEE";
                 string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_DELETE_EMPLOYEES]");
-                connection.spShowById(Sqlstring, id, parameter);
+                connection.spDeleteById(Sqlstring, id, parameter);
             }
             catch (Exception ex)
             {

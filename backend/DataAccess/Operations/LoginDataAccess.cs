@@ -15,35 +15,53 @@ namespace DataAccess
 
         public Employee SearchEmployee(int username)
         {
-            string parameter = "@CARDID";
-            string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_SEARCH_EMPLOYEES_BY_CARDID]");
-            SqlDataReader SQLTemporal = connection.LoginQuery(Sqlstring, username, parameter);
-
-            if (SQLTemporal != null && SQLTemporal.HasRows)
+            try
             {
-                while (SQLTemporal.Read())
+                string parameter = "@CARDID";
+                string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_SEARCH_EMPLOYEES_BY_CARDID]");
+                SqlDataReader SQLTemporal = connection.LoginQuery(Sqlstring, username, parameter);
+
+                if (SQLTemporal != null && SQLTemporal.HasRows)
                 {
-                    return new Employee(SQLTemporal.GetInt32(0), SQLTemporal.GetInt32(1), SQLTemporal.GetString(2).Trim(), SQLTemporal.GetString(3).Trim(), SQLTemporal.GetString(4).Trim(),SQLTemporal.GetString(5).Trim(),SQLTemporal.GetString(6).Trim(),SQLTemporal.GetInt32(7),SQLTemporal.GetInt32(8),SQLTemporal.GetInt32(9), SQLTemporal.GetString(10).Trim(), SQLTemporal.GetDecimal(11), SQLTemporal.GetDateTime(12));
+                    while (SQLTemporal.Read())
+                    {
+                        return new Employee(SQLTemporal.GetInt32(0), SQLTemporal.GetInt32(1), SQLTemporal.GetString(2).Trim(), SQLTemporal.GetString(3).Trim(), SQLTemporal.GetString(4).Trim(), SQLTemporal.GetString(5).Trim(), SQLTemporal.GetString(6).Trim(), SQLTemporal.GetInt32(7), SQLTemporal.GetInt32(8), SQLTemporal.GetInt32(9), SQLTemporal.GetString(10).Trim(), SQLTemporal.GetDecimal(11), SQLTemporal.GetDateTime(12));
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("LoginDataAccess.SearchEmployee Error: " + ex.Message);
             }
             return null;
         }
 
         public Customer SearchCustomer(int username)
         {
-            string parameter = "@IDCUSTOMER";
-            string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_SEARCH_CUSTOMERS]");
-            SqlDataReader SQLTemporal = connection.LoginQuery(Sqlstring, username, parameter);
-
-            if (SQLTemporal != null && SQLTemporal.HasRows)
+            try
             {
-                while (SQLTemporal.Read())
+                string parameter = "@IDCARD";
+                string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_SEARCH_CUSTOMERS_BY_CARDID]");
+                SqlDataReader SQLTemporal = connection.LoginQuery(Sqlstring, username, parameter);
+
+                if (SQLTemporal != null && SQLTemporal.HasRows)
                 {
-                    return new Customer (SQLTemporal.GetInt32(0), SQLTemporal.GetInt32(1), SQLTemporal.GetString(2).Trim(), SQLTemporal.GetString(3).Trim(), SQLTemporal.GetString(4).Trim(), SQLTemporal.GetString(5).Trim(), SQLTemporal.GetString(6).Trim(), SQLTemporal.GetInt32(7), SQLTemporal.GetString(8).Trim());
+                    while (SQLTemporal.Read())
+                    {
+                        return new Customer(SQLTemporal.GetInt32(0), SQLTemporal.GetInt32(1), SQLTemporal.GetString(2).Trim(), SQLTemporal.GetString(3).Trim(), SQLTemporal.GetString(4).Trim(), SQLTemporal.GetString(5).Trim(), SQLTemporal.GetString(6).Trim(), SQLTemporal.GetInt32(7), SQLTemporal.GetString(8).Trim());
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("LoginDataAccess.SearchCustomer Error: " + ex.Message);
             }
             return null;
         }
 
     }
 }
+
+
