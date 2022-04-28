@@ -402,7 +402,331 @@ namespace DataAccess
         }
         #endregion
 
+        #region ProductsMPR
 
+        public void spInsertProductsMPR(string sp, ProductsMPR productsMPR)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        myCommand.Parameters.AddWithValue("@ID_PRODUCT_MPR	", SqlDbType.Int).Value = productsMPR.IdProductMPR;
+                        myCommand.Parameters.AddWithValue("@ID_PURCHASE_RECORD", SqlDbType.Int).Value = productsMPR.IdPurchaseRecord;
+                        myCommand.Parameters.AddWithValue("@ID_SUPPLIER_MATERIALS", SqlDbType.Int).Value = productsMPR.IdSupplierMaterial;
+                        myCommand.Parameters.AddWithValue("@QUANTITY", SqlDbType.Float).Value = productsMPR.Quantity;
+                        myCommand.Parameters.AddWithValue("@UNITARY_COST", SqlDbType.Float).Value = productsMPR.UnitaryCost;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spInsertProductsMPR Error: " + ex.Message);
+            }
+        }
+
+        public void spUpdateProductsMPR(string sp, ProductsMPR productsMPR)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        myCommand.Parameters.AddWithValue("@ID_PRODUCT_MPR	", SqlDbType.Int).Value = productsMPR.IdProductMPR;
+                        myCommand.Parameters.AddWithValue("@ID_PURCHASE_RECORD", SqlDbType.Int).Value = productsMPR.IdPurchaseRecord;
+                        myCommand.Parameters.AddWithValue("@ID_SUPPLIER_MATERIALS", SqlDbType.Int).Value = productsMPR.IdSupplierMaterial;
+                        myCommand.Parameters.AddWithValue("@QUANTITY", SqlDbType.Float).Value = productsMPR.Quantity;
+                        myCommand.Parameters.AddWithValue("@UNITARY_COST", SqlDbType.Float).Value = productsMPR.UnitaryCost;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spUpdateProductsMPR Error: " + ex.Message);
+            }
+        }
+        #endregion
+
+        #region ProductsShoppingCart
+
+        public void spInsertProductsShoppingCart(string sp, ProductsShoppingCart productsShoppingCart)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        //myCommand.Parameters.AddWithValue("@IDPRODUCTSC	", SqlDbType.Int).Value = productsShoppingCart.IdProductsSC;
+                        myCommand.Parameters.AddWithValue("@IDSHOPPINGCART", SqlDbType.Int).Value = productsShoppingCart.IdShoppingCart;
+                        myCommand.Parameters.AddWithValue("@IDPRODUCTSINV", SqlDbType.Int).Value = productsShoppingCart.IdProductsInv;
+                        myCommand.Parameters.AddWithValue("@QUANTITY", SqlDbType.Int).Value = productsShoppingCart.Quantity;
+                        myCommand.Parameters.AddWithValue("@PRICE", SqlDbType.Float).Value = productsShoppingCart.Price;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spInsertProductsShoppingCart Error: " + ex.Message);
+            }
+        }
+
+        public void spUpdateProductsShoppingCart(string sp, ProductsShoppingCart productsShoppingCart)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        myCommand.Parameters.AddWithValue("@IDPRODUCTSC	", SqlDbType.Int).Value = productsShoppingCart.IdProductsSC;
+                        //myCommand.Parameters.AddWithValue("@IDSHOPPINGCART", SqlDbType.Int).Value = productsShoppingCart.IdShoppingCart;
+                        //myCommand.Parameters.AddWithValue("@IDPRODUCTSINV", SqlDbType.Int).Value = productsShoppingCart.IdProductsInv;
+                        myCommand.Parameters.AddWithValue("@QUANTITY", SqlDbType.Int).Value = productsShoppingCart.Quantity;
+                        //myCommand.Parameters.AddWithValue("@PRICE", SqlDbType.Float).Value = productsShoppingCart.Price;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spUpdateProductsShoppingCart Error: " + ex.Message);
+            }
+        }
+        #endregion
+
+        #region SaleTypes
+
+        public void spInsertSaleTypes(string sp, SaleTypes saleTypes)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        //myCommand.Parameters.AddWithValue("@IDSALETYPE", SqlDbType.Int).Value = saleTypes.IdSaleType;
+                        myCommand.Parameters.AddWithValue("@NAME", SqlDbType.VarChar).Value = saleTypes.Name;
+                        myCommand.Parameters.AddWithValue("@DESCRIPTION", SqlDbType.VarChar).Value = saleTypes.Description;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spInsertSaleTypes Error: " + ex.Message);
+            }
+        }
+
+        public void spUpdateSaleTypes(string sp, SaleTypes saleTypes)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        myCommand.Parameters.AddWithValue("@IDSALETYPE", SqlDbType.Int).Value = saleTypes.IdSaleType;
+                        myCommand.Parameters.AddWithValue("@NAME", SqlDbType.VarChar).Value = saleTypes.Name;
+                        myCommand.Parameters.AddWithValue("@DESCRIPTION", SqlDbType.VarChar).Value = saleTypes.Description;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spInsertSaleTypes Error: " + ex.Message);
+            }
+        }
+        #endregion
+
+        #region Sales
+
+        public void spInsertSales(string sp, Sales sales)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        //myCommand.Parameters.AddWithValue("@IDSALE", SqlDbType.Int).Value = sales.IdSale;
+                        myCommand.Parameters.AddWithValue("@IDINVOICE", SqlDbType.Int).Value = sales.IdInvoice;
+                        myCommand.Parameters.AddWithValue("@IDPRODUCTSINV", SqlDbType.Int).Value = sales.IdProductsInv;
+                        myCommand.Parameters.AddWithValue("@PRICE", SqlDbType.Float).Value = sales.Price;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spInsertSales Error: " + ex.Message);
+            }
+        }
+
+        public void spUpdateSales(string sp, Sales sales)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        myCommand.Parameters.AddWithValue("@IDSALE", SqlDbType.Int).Value = sales.IdSale;
+                        myCommand.Parameters.AddWithValue("@IDINVOICE", SqlDbType.Int).Value = sales.IdInvoice;
+                        myCommand.Parameters.AddWithValue("@IDPRODUCTSINV", SqlDbType.Int).Value = sales.IdProductsInv;
+                        myCommand.Parameters.AddWithValue("@PRICE", SqlDbType.Float).Value = sales.Price;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spUpdateSales Error: " + ex.Message);
+            }
+        }
+        #endregion
+
+        #region ShoppingCart
+
+        public void spInsertShoppingCart(string sp, ShoppingCart shoppingCart)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        //myCommand.Parameters.AddWithValue("@IDSHOPPINGCART", SqlDbType.Int).Value = shoppingCart.IdShoppingCart;
+                        myCommand.Parameters.AddWithValue("@CUSTOMER", SqlDbType.Int).Value = shoppingCart.IdCustomer;
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spInsertShoppingCart Error: " + ex.Message);
+            }
+        }
+
+        public void spUpdateShoppingCart(string sp, ShoppingCart shoppingCart)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        myCommand.Parameters.AddWithValue("@IDSHOPPINGCART", SqlDbType.Int).Value = shoppingCart.IdShoppingCart;
+                        myCommand.Parameters.AddWithValue("@CUSTOMER", SqlDbType.Int).Value = shoppingCart.IdCustomer;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spUpdateShoppingCart Error: " + ex.Message);
+            }
+        }
+        #endregion
+
+        #region CreateProducts
+
+        public void spInsertCreateProducts(string sp, CreateProducts createProducts)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        //myCommand.Parameters.AddWithValue("@ID_CREATE_PRODUCT", SqlDbType.Int).Value = createProducts.IdCreateProduct;
+                        myCommand.Parameters.AddWithValue("@ID_EMPLOYEE", SqlDbType.Int).Value = createProducts.IdEmployee;
+                        myCommand.Parameters.AddWithValue("@ID_PRODUCT", SqlDbType.Int).Value = createProducts.IdProduct;
+                        myCommand.Parameters.AddWithValue("@UNITARY_COST", SqlDbType.Float).Value = createProducts.UnitaryCost;
+                        myCommand.Parameters.AddWithValue("@QUANTITYT", SqlDbType.Float).Value = createProducts.Quantity;
+                        myCommand.Parameters.AddWithValue("@CREATION_DATE", SqlDbType.Date).Value = createProducts.CreationDate;
+                        myCommand.Parameters.AddWithValue("@ID_MATERIAL_REQUEST", SqlDbType.Int).Value = createProducts.IdMaterialRequest;
+                        myCommand.Parameters.AddWithValue("@SALE_PRICE", SqlDbType.Float).Value = createProducts.SalePrice;
+                        myCommand.Parameters.AddWithValue("@DETAILS", SqlDbType.VarChar).Value = createProducts.Details;
+                        myCommand.Parameters.AddWithValue("@ID_STATUS", SqlDbType.Int).Value = createProducts.IdStatus;
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spInsertCreateProducts Error: " + ex.Message);
+            }
+        }
+
+        public void spUpdateCreateProducts(string sp, CreateProducts createProducts)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        //myCommand.Parameters.AddWithValue("@ID_CREATE_PRODUCT", SqlDbType.Int).Value = createProducts.IdCreateProduct;
+                        myCommand.Parameters.AddWithValue("@ID_EMPLOYEE", SqlDbType.Int).Value = createProducts.IdEmployee;
+                        myCommand.Parameters.AddWithValue("@ID_PRODUCT", SqlDbType.Int).Value = createProducts.IdProduct;
+                        myCommand.Parameters.AddWithValue("@UNITARY_COST", SqlDbType.Float).Value = createProducts.UnitaryCost;
+                        myCommand.Parameters.AddWithValue("@QUANTITYT", SqlDbType.Float).Value = createProducts.Quantity;
+                        myCommand.Parameters.AddWithValue("@CREATION_DATE", SqlDbType.Date).Value = createProducts.CreationDate;
+                        myCommand.Parameters.AddWithValue("@ID_MATERIAL_REQUEST", SqlDbType.Int).Value = createProducts.IdMaterialRequest;
+                        myCommand.Parameters.AddWithValue("@SALE_PRICE", SqlDbType.Float).Value = createProducts.SalePrice;
+                        myCommand.Parameters.AddWithValue("@DETAILS", SqlDbType.VarChar).Value = createProducts.Details;
+                        myCommand.Parameters.AddWithValue("@ID_STATUS", SqlDbType.Int).Value = createProducts.IdStatus;
+                        myCommand.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Coneccion.spUpdateCreateProducts Error: " + ex.Message);
+            }
+        }
+        #endregion
 
         public void spInsert(string sp, int id, string parameter)
         {

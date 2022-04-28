@@ -49,6 +49,7 @@
     <Compile Include="Operations\InvoicesDataAccess.cs" />
     <Compile Include="Operations\LoginDataAccess.cs" />
     <Compile Include="Operations\MaterialPurchaseRecordDataAccess.cs" />
+    <Compile Include="Operations\ProductsMPRDataAccess.cs" />
     <Compile Include="Operations\WorkOderDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
