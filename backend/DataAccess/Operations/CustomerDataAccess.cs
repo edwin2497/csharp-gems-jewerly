@@ -43,6 +43,7 @@ namespace DataAccess
                 customer.Phone = dt.Rows[i]["PHONE"].ToString();
                 customer.Email = dt.Rows[i]["EMAIL"].ToString();
                 customer.IdDirection =Convert.ToInt32(dt.Rows[i]["ID_DIRECTION"]);
+                customer.Password = dt.Rows[i]["PASSWORD"].ToString();
                 customertList.Add(customer);
             }
             return customertList;
@@ -67,6 +68,7 @@ namespace DataAccess
                 customer.Phone = dt.Rows[i]["PHONE"].ToString();
                 customer.Email = dt.Rows[i]["EMAIL"].ToString();
                 customer.IdDirection =Convert.ToInt32(dt.Rows[i]["ID_DIRECTION"]);
+                customer.Password = dt.Rows[i]["PASSWORD"].ToString();
                 customertList.Add(customer);
             }
             return customertList;
