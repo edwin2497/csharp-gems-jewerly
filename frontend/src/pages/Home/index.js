@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
-import NavBarPublic from "../../components/NavMenu/NavBarPublic";
-import { UserContext } from "../../store/UserContext";
+import React, {useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const Home = () => {
   const { user, isLogged } = useContext(UserContext);
-
   return (
     <div>
       <h1>Hompage</h1>
