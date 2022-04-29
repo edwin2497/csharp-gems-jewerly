@@ -203,7 +203,7 @@ namespace DataAccess
                         myCommand.Parameters.AddWithValue("@EMAIL", SqlDbType.VarChar).Value = customer.Email;
                         myCommand.Parameters.AddWithValue("@PHONE", SqlDbType.VarChar).Value = customer.Phone;
                         myCommand.Parameters.AddWithValue("@DIRECTION", SqlDbType.Int).Value = customer.IdDirection;
-                        //myCommand.Parameters.AddWithValue("@PASSWORD", SqlDbType.VarChar).Value = customer.Password;
+                        myCommand.Parameters.AddWithValue("@PASSWORD", SqlDbType.VarChar).Value = customer.Password;
                         myCommand.ExecuteNonQuery();
                         connection.Close();
                     }
