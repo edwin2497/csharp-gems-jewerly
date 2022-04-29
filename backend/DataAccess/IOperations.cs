@@ -12,11 +12,11 @@ namespace DataAccess
     {
         List<T> ShowById(int id);
 
-        void Insert(T item);
+        string Insert(T item);
 
-        void Delete(int id);
+        string Delete(int id);
 
-        void Update(T item);
+        string Update(T item);
 
         List<T> ShowAll();
     }

@@ -133,5 +133,20 @@ namespace DataAccess
                 Console.WriteLine("InvoicesDataAccess.ShowById Error: " + ex.Message);
             }
         }
+
+        string IOperations<Invoices>.Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<Invoices>.Insert(Invoices item)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<Invoices>.Update(Invoices item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace DataAccess
             return null;
         }
 
-        public void spDeleteById(string sp, int id, string parameter)
+        public string spDeleteById(string sp, int id, string parameter)
         {
             try
             {
@@ -89,20 +89,24 @@ namespace DataAccess
                         myCommand.ExecuteNonQuery();
                         connection.Close();
                     }
+                    return "Deleted Successfully";
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Connection.spDeleteById Error: " + ex.Message);
+                return "Deleted Unsuccessfully";
             }
         }
 
 
         #region Employee
-        public void spInsert_UpdateEmployee(string sp, Employee employee)
+        public string spInsertEmployee(string sp, Employee employee)
         {
             try
             {
+                int result;
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -121,15 +125,62 @@ namespace DataAccess
                         myCommand.Parameters.AddWithValue("@PASSWORD", SqlDbType.VarChar).Value = employee.Password;
                         myCommand.Parameters.AddWithValue("@SALARY", SqlDbType.Money).Value = employee.Salary;
                         myCommand.Parameters.AddWithValue("@HIRINGDATE", SqlDbType.Date).Value = employee.HiringDate;
-                        myCommand.ExecuteNonQuery();
+                        result = myCommand.ExecuteNonQuery();
+                        Console.WriteLine(result);
                         connection.Close();
                     }
+
+                    return "Added/Updated Successfully";
+
                 }
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Connection.spInsert_UpdateEmployee Error: " + ex.Message);
+                return "Added/Updated Unsuccessfully";
+            }
+        }
+
+
+        public string spUpdateEmployee(string sp, Employee employee)
+        {
+            try
+            {
+                int result;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand myCommand = new SqlCommand(sp, connection))
+                    {
+                        myCommand.CommandType = CommandType.StoredProcedure;
+                        myCommand.Parameters.AddWithValue("@IDCARD", SqlDbType.Int).Value = employee.IdCard;
+                        myCommand.Parameters.AddWithValue("@FIRSTNAME", SqlDbType.VarChar).Value = employee.FirstName;
+                        myCommand.Parameters.AddWithValue("@LASTNAME1", SqlDbType.VarChar).Value = employee.LastName1;
+                        myCommand.Parameters.AddWithValue("@LASTNAME2", SqlDbType.VarChar).Value = employee.LastName2;
+                        myCommand.Parameters.AddWithValue("@EMAIL", SqlDbType.VarChar).Value = employee.Email;
+                        myCommand.Parameters.AddWithValue("@PHONE", SqlDbType.VarChar).Value = employee.Phone;
+                        myCommand.Parameters.AddWithValue("@DIRECTION", SqlDbType.Int).Value = employee.IdDirection;
+                        myCommand.Parameters.AddWithValue("@PERMISSION", SqlDbType.Int).Value = employee.IdPermission;
+                        myCommand.Parameters.AddWithValue("@POSITION", SqlDbType.Int).Value = employee.IdPosition;
+                        myCommand.Parameters.AddWithValue("@PASSWORD", SqlDbType.VarChar).Value = employee.Password;
+                        myCommand.Parameters.AddWithValue("@SALARY", SqlDbType.Money).Value = employee.Salary;
+                        myCommand.Parameters.AddWithValue("@HIRINGDATE", SqlDbType.Date).Value = employee.HiringDate;
+                        result = myCommand.ExecuteNonQuery();
+                        Console.WriteLine(result);
+                        connection.Close();
+                    }
+
+                    return "Employee updated succesfully";
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection.spInsert_UpdateEmployee Error: " + ex.Message);
+                return "Connection.spInsert_UpdateEmployee Error: " + ex.Message;
             }
         }
         #endregion

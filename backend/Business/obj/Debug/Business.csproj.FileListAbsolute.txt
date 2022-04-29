@@ -37,5 +37,3 @@ C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\B
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\Business.dll
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\Business.pdb
-C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\bin\Debug\Newtonsoft.Json.dll
-C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\bin\Debug\Newtonsoft.Json.xml

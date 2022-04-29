@@ -14,19 +14,7 @@ namespace WebAPI
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        //public ActionResult Get ()
-        //{
-        //    try
-        //    {
-        //        return Ok();
-        //    }
-        //    catch (Exception ex)
-        //    {
 
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
-        //// GET api/employee/<id>
         [HttpGet("{id}")]
         public JsonResult Get(int id)
         {
@@ -46,8 +34,7 @@ namespace WebAPI
         public JsonResult Post([FromBody] Employee employee)
         {
             EmployeeOperations employeeOperations = new EmployeeOperations();
-            employeeOperations.InsertEmployee(employee);
-            return new JsonResult("Added Successfully");
+            return new JsonResult(employeeOperations.InsertEmployee(employee));
         }
 
         // PUT api/employee/<id>
@@ -60,10 +47,10 @@ namespace WebAPI
 
         // DELETE api/employee/<id>
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public JsonResult Delete(int id)
         {
             EmployeeOperations employeeOperations = new EmployeeOperations();
-            employeeOperations.DeleteEmployee(id);
+            return new JsonResult(employeeOperations.DeleteEmployee(id));
         }
     }
 }

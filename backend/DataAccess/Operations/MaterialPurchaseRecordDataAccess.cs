@@ -68,5 +68,20 @@ namespace DataAccess
             string sp = string.Format("[SCH_FINANCIAL].[SP_UPDATE_MATERIAL_PURCHASE_RECORDS]");
             connection.spUpdateMaterialPurchaseRecord(sp, materialPurchaseRecord);
         }
+
+        string IOperations<MaterialPurchaseRecord>.Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<MaterialPurchaseRecord>.Insert(MaterialPurchaseRecord item)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<MaterialPurchaseRecord>.Update(MaterialPurchaseRecord item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

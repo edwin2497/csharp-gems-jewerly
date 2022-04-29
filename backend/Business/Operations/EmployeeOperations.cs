@@ -24,19 +24,19 @@ namespace Business
             return employeeDataAccess.ShowById(id);
         }
 
-        public void UpdateEmployee(Employee employee)
+        public string UpdateEmployee(Employee employee)
         {
-            employeeDataAccess.Update(employee);
+            return employeeDataAccess.Update(employee);
         }
 
-        public void InsertEmployee(Employee employee)
+        public string InsertEmployee(Employee employee)
         {
-            employeeDataAccess.Insert(employee);
+           return employeeDataAccess.Insert(employee);
         }
 
-        public void DeleteEmployee(int id)
+        public string DeleteEmployee(int id)
         {
-            employeeDataAccess.Delete(id);
+            return employeeDataAccess.Delete(id);
         }
     }
 }
