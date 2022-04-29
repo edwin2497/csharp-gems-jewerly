@@ -80,5 +80,20 @@ namespace DataAccess
             string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_INSERT/UPDATE_WORK_ORDERS]");
             connection.spInsert_UpdateWorkOrder(Sqlstring, workOrder);
         }
+
+        string IOperations<WorkOrders>.Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<WorkOrders>.Insert(WorkOrders item)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<WorkOrders>.Update(WorkOrders item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

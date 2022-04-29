@@ -1,6 +1,5 @@
 ﻿using DataAccess;
 using Entities;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,48 +23,40 @@ namespace Business
             return loginDataAccess.SearchCustomer(username);
         }
 
-        //public List<Employee> Login(int username, string password)
-        //{
-        //    Employee employee = SearchEmployee(username);
-        //    Customer customer = SearchCustomer(username);
+        public string GetUserType(int username)
+        {
+            Employee employee = SearchEmployee(username);
+            Customer customer = SearchCustomer(username);
 
-        //    string userError = "Username doesn't exist";
-        //    string passwordError = "Incorrect password";
+            string userError = "Username doesn't exist";
 
-        //    List<Employee> employees = new List<Employee>();
-
-
-        //    if (employee != null)
-        //    {
-        //        if (password.Equals(employee.Password))
-        //        {
-        //            employees.Add(employee);
-        //            return employees;
-        //        }
-        //        //else
-        //        //{
-        //        //    return passwordError;
-        //        //}
-        //    }
-        //    //else if (customer != null)
-        //    //{
-        //    //    if (password.Equals(customer.Password))
-        //    //    {
-        //    //        return "Customer";
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        return passwordError;
-        //    //    }
-        //    //}
-        //    return null;
-        //}
+            if (employee != null)
+            {
+                return "Employee";
+            }
+            else if (customer != null)
+            {
+                return "Customer";
+            }
+            return userError;
+        }
 
         public Employee GetEmployeeByUsername(int username)
         {
             Employee employee = SearchEmployee(username);
 
-                return employee;
+            return employee;
+        }
+
+        public Customer GetCustomerByUsername(int username)
+        {
+            Customer customer = SearchCustomer(username);
+
+            return customer;
         }
     }
 }
+
+
+
+

@@ -13,41 +13,23 @@ namespace DataAccess
     {
         Connection connection = new Connection();
 
-        public void Delete(int id)
+        public string Delete(int id)
         {
-            try
-            {
                 string parameter = "@IDEMPLOYEE";
                 string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_DELETE_EMPLOYEES]");
-                connection.spDeleteById(Sqlstring, id, parameter);
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("EmployeeDataAccess.Delete Error: " + ex.Message);
-            }
+                return connection.spDeleteById(Sqlstring, id, parameter);
+ 
         }
 
-        public void Insert(Employee employee)
+        public string Insert(Employee employee)
         {
-            try
-            {
-                string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_INSERT/UPDATE_EMPLOYEES]");
-                connection.spInsert_UpdateEmployee(Sqlstring, employee);
-            }
-            catch (Exception ex)
-            {
 
-                Console.WriteLine("EmployeeDataAccess.Insert Error: " + ex.Message);
-            }
+            string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_INSERT/UPDATE_EMPLOYEES]");
+            return connection.spInsertEmployee(Sqlstring, employee);
+
+
         }
 
-        //public DataTable ShowAll()
-        //{
-        //    string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_SEARCH_ALL_EMPLOYEES]");
-        //    DataTable dt = connection.spShowAll(Sqlstring);
-        //    return dt;
-        //}
 
         public List<Employee> ShowAll()
         {
@@ -85,13 +67,6 @@ namespace DataAccess
             return null;
         }
 
-        //public DataTable ShowById(int id)
-        //{
-        //    string parameter = "@IDEMPLOYEE";
-        //    string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_SEARCH_EMPLOYEES]");
-        //    DataTable dt = connection.spShowById(Sqlstring, id, parameter);
-        //    return dt;
-        //}
 
         public List<Employee> ShowById(int id)
         {
@@ -129,19 +104,12 @@ namespace DataAccess
             return null;
         }
 
-        public void Update(Employee employee)
+        public string Update(Employee employee)
         {
-            try
-            {
-                string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_INSERT/UPDATE_EMPLOYEES]");
-                connection.spInsert_UpdateEmployee(Sqlstring, employee);
 
-            }
-            catch (Exception ex)
-            {
+            string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_INSERT/UPDATE_EMPLOYEES]");
+            return connection.spUpdateEmployee(Sqlstring, employee);
 
-                Console.WriteLine("EmployeeDataAccess.Update Error: " + ex.Message);
-            }
 
         }
     }

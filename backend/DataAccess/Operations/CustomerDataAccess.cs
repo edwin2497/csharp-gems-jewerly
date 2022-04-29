@@ -77,6 +77,21 @@ namespace DataAccess
             string Sqlstring = string.Format("[SCH_ADMINISTRATIVE].[SP_INSERT/UPDATE_CUSTOMERS]");
             connection.spInsert_UpdateCustomer(Sqlstring, customer);
         }
+
+        string IOperations<Customer>.Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<Customer>.Insert(Customer item)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IOperations<Customer>.Update(Customer item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
