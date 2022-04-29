@@ -1,0 +1,7 @@
+.div-container {
+  margin: auto;
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+  min-width: 600px;
+}

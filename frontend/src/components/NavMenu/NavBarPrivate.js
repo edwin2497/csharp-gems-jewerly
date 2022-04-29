@@ -16,11 +16,12 @@ const NavBarPrivate = () => {
             <NavDropdown title="Financial" id="basic-nav-dropdown">
               <NavDropdown.Item href="/invoice">Invoices</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Inventory" id="basic-nav-dropdown">
-            </NavDropdown>
-            <NavDropdown title="Setting" id="basic-nav-dropdown">
-            </NavDropdown>
-            <Nav.Link href="/logout">Logout</Nav.Link>
+            <NavDropdown
+              title="Inventory"
+              id="basic-nav-dropdown"
+            ></NavDropdown>
+            <NavDropdown title="Setting" id="basic-nav-dropdown"></NavDropdown>
+            {/* <Nav.Link href="/logout">Logout</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

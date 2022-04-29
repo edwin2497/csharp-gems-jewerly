@@ -1,19 +1,18 @@
 import { Button, TextField } from "@mui/material";
-import React, { useState, useContext, useEffect } from "react";
-import { UserContext } from "../../store/UserContext";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import "./Login.css";
+import LoginIcon from "@mui/icons-material/Login";
 
 const Login = () => {
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
-  const [isLoading, setIsLoading] = useState(false);
-  const ctx = useContext(UserContext);
-
-  useEffect(() => {
-    console.log(ctx);
-  });
+  const userContext = useContext(UserContext);
+  const { login, isLoading } = useAuth();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({
@@ -24,42 +23,43 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    setIsLoading(true);
-    ctx.auth(user.username, user.password);
-    setIsLoading(false);
+    login(user);
   };
 
   if (isLoading) return <p>Loading...</p>;
 
-  return ctx.isLogged ? (
+  return userContext.user ? (
     <div>
-      {console.log(ctx.isLogged)}
       <Navigate to="/" replace />
     </div>
   ) : (
-    <form onSubmit={(e) => handleLogin(e)}>
-      <br />
-      <br />
-      <TextField
-        required
-        name="username"
-        label="Username"
-        onChange={handleChange}
-      />
-      <br />
-      <br />
-      <TextField
-        required
-        variant="outlined"
-        name="password"
-        label="Password"
-        type="password"
-        onChange={handleChange}
-      />
-      <br />
-      <br />
-      <Button type="submit">Login</Button>
-    </form>
+    <div className="form-container">
+      <form className="form" onSubmit={(e) => handleLogin(e)}>
+        <div className="input-container">
+          <TextField
+            required
+            name="username"
+            label="Username"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-container">
+          <TextField
+            required
+            variant="outlined"
+            name="password"
+            label="Password"
+            type="password"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="btn">
+          <Button variant="contained" type="submit" endIcon={<LoginIcon />}>
+            Login
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 };
 
