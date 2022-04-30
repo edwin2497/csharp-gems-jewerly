@@ -21,8 +21,8 @@ const EmployeeUpdateForm = ({
   setModalEdit,
   selectedEmployee,
   setSelectedEmployee,
+  refreshList
 }) => {
- 
   const employee = {
     IdCard: selectedEmployee.IdCard,
     FirstName: selectedEmployee.FirstName,
@@ -67,6 +67,7 @@ const EmployeeUpdateForm = ({
     addEmployee(employee).then((result) => {
       setResult(result);
       openCloseResultAlert();
+      refreshList()
     });
   };
   return (

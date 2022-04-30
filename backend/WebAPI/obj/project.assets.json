@@ -719,11 +719,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\edwin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -744,8 +744,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Business\\Business.csproj"
+            "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Business\\Business.csproj"
             }
           }
         }
@@ -779,6 +779,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.24, 3.1.24]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

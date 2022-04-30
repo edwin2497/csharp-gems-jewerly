@@ -1,50 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   TextField,
-  InputLabel,
   Grid,
-  Select,
-  MenuItem,
   Alert,
   Collapse,
   IconButton,
 } from "@mui/material";
-import { getAllEmployees, addEmployee } from "../../../services/Employee";
+import {addCustomer } from "../../../services/Customer";
 import { getAllDirections } from "../../../services/Direction";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import CloseIcon from "@mui/icons-material/Close";
-import "./EmployeeUpdateForm.css";
+import "./CustomerUpdateForm.css";
 
 const CustomerUpdateForm = ({
   setModalEdit,
-  selectedEmployee,
-  setSelectedEmployee,
+  selectedCustomer,
+  setSelectedCustomer,
 }) => {
- 
-  const employee = {
-    IdCard: selectedEmployee.IdCard,
-    FirstName: selectedEmployee.FirstName,
-    LastName1: selectedEmployee.LastName1,
-    LastName2: selectedEmployee.LastName2,
-    Phone: selectedEmployee.Phone,
-    Email: selectedEmployee.Email,
-    IdDirection: selectedEmployee.IdDirection,
-    IdPermission: 1,
-    IdPosition: 1,
-    Password: selectedEmployee.Password,
-    Salary: selectedEmployee.Salary,
-    HiringDate: selectedEmployee.HiringDate,
+  const customer = {
+    //IdCustomer: selectedCustomer.IdCustomer,
+    IdCard: selectedCustomer.IdCard,
+    FirstName: selectedCustomer.FirstName,
+    LastName1: selectedCustomer.LastName1,
+    LastName2: selectedCustomer.LastName2,
+    Phone: selectedCustomer.Phone,
+    Email: selectedCustomer.Email,
+    IdDirection: selectedCustomer.IdDirection,
+    Password: selectedCustomer.Password,
   };
 
-  const [date, setDate] = useState(new Date());
+  console.log(customer);
 
   const [directions, setDirections] = useState([]);
-
-  const [permissions, setPermissions] = useState([]);
-
-  const [positions, setPositions] = useState([]);
 
   const [result, setResult] = useState("");
 
@@ -56,7 +43,7 @@ const CustomerUpdateForm = ({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSelectedEmployee((prevState) => ({
+    setSelectedCustomer((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -64,7 +51,7 @@ const CustomerUpdateForm = ({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addEmployee(employee).then((result) => {
+    addCustomer(customer).then((result) => {
       setResult(result);
       openCloseResultAlert();
     });
@@ -77,9 +64,9 @@ const CustomerUpdateForm = ({
           <div className="input">
             <TextField
               disabled
-              name="IdEmployee"
-              label="IdEmployee"
-              value={selectedEmployee && selectedEmployee.IdEmployee}
+              name="IdCustomer"
+              label="IdCustomer"
+              value={selectedCustomer && selectedCustomer.IdCustomer}
               onChange={handleChange}
             />
           </div>
@@ -88,7 +75,7 @@ const CustomerUpdateForm = ({
               disabled
               name="IdCard"
               label="IdCard"
-              value={selectedEmployee && selectedEmployee.IdCard}
+              value={selectedCustomer && selectedCustomer.IdCard}
               onChange={handleChange}
             />
           </div>
@@ -96,7 +83,7 @@ const CustomerUpdateForm = ({
             <TextField
               name="FirstName"
               label="FirstName"
-              value={selectedEmployee && selectedEmployee.FirstName}
+              value={selectedCustomer && selectedCustomer.FirstName}
               onChange={handleChange}
               required
             />
@@ -105,7 +92,7 @@ const CustomerUpdateForm = ({
             <TextField
               name="LastName1"
               label="LastName1"
-              value={selectedEmployee && selectedEmployee.LastName1}
+              value={selectedCustomer && selectedCustomer.LastName1}
               onChange={handleChange}
               required
             />
@@ -114,7 +101,7 @@ const CustomerUpdateForm = ({
             <TextField
               name="LastName2"
               label="LastName2"
-              value={selectedEmployee && selectedEmployee.LastName2}
+              value={selectedCustomer && selectedCustomer.LastName2}
               onChange={handleChange}
               required
             />
@@ -125,7 +112,7 @@ const CustomerUpdateForm = ({
             <TextField
               name="Phone"
               label="Phone"
-              value={selectedEmployee && selectedEmployee.Phone}
+              value={selectedCustomer && selectedCustomer.Phone}
               onChange={handleChange}
               required
               onInput={(e) => {
@@ -139,7 +126,7 @@ const CustomerUpdateForm = ({
             <TextField
               name="Email"
               label="Email"
-              value={selectedEmployee && selectedEmployee.Email}
+              value={selectedCustomer && selectedCustomer.Email}
               onChange={handleChange}
               required
             />
@@ -148,18 +135,14 @@ const CustomerUpdateForm = ({
             <TextField
               name="Password"
               label="Password"
-              value={selectedEmployee && selectedEmployee.Password}
+              value={selectedCustomer && selectedCustomer.Password}
               onChange={handleChange}
               required
             />
           </div>
         </Grid>
         <div className="btn">
-          <Button
-            color="success"
-            type="submit"
-            variant="contained"
-          >
+          <Button color="success" type="submit" variant="contained">
             Edit
           </Button>
 

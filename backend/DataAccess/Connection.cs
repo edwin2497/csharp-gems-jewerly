@@ -11,7 +11,7 @@ namespace DataAccess
 {
     public class Connection
     {
-        private string connectionString = @"Data Source= EDWIN-PC;Initial Catalog= BD_GemasJoyeria; User Id= AdminTest ; Password = 123";
+        private string connectionString = @"Data Source= EDWIN-PC;Initial Catalog= BD_GemasJoyeria; User Id= Admin ; Password = 123";
 
 
         public DataTable spShowAll(string sp)

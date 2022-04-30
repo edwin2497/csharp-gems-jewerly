@@ -22,6 +22,7 @@ import { getAllCustomers } from "../../services/Customer";
 import { makeStyles } from "@material-ui/core/styles";
 import CustomerDeleteForm from "../../components/Customer/Delete/CustomerDeleteForm";
 import CustomerInsertForm from "../../components/Customer/Insert/CustomerInsertForm";
+import CustomerUpdateForm from "../../components/Customer/Update/CustomerUpdateForm";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -95,10 +96,15 @@ const Customer = () => {
     </div>
   );
 
-  const bodyEdit = <div className={styles.modal}>
-
-
-  </div>;
+  const bodyEdit = (
+    <div className={styles.modal}>
+      <CustomerUpdateForm
+        setModalEdit={setModalEdit}
+        selectedCustomer={selectedCustomer}
+        setSelectedCustomer={setSelectedCustomer}
+      />
+    </div>
+  );
 
   const bodyDelete = (
     <div className={styles.modal}>
