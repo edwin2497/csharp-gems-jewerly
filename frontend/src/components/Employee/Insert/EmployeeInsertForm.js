@@ -11,13 +11,25 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { getAllEmployees, addEmployee } from "../../../services/Employee";
+import { addEmployee } from "../../../services/Employee";
 import { getAllDirections } from "../../../services/Direction";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./EmployeeInsertForm.css";
 
-const EmployeeInsertForm = ({ setModalInsert }) => {
+const EmployeeInsertForm = ({ setModalInsert, refreshList }) => {
+  const [directions, setDirections] = useState([]);
+
+  const [permissions, setPermissions] = useState([]);
+
+  const [positions, setPositions] = useState([]);
+
+  const [date, setDate] = useState(new Date());
+
+  const [result, setResult] = useState("");
+
+  const [resultAlert, setResultAlert] = useState(false);
+
   const [selectedEmployee, setSelectedEmployee] = useState({
     IdEmployee: "",
     IdCard: "",
@@ -31,10 +43,10 @@ const EmployeeInsertForm = ({ setModalInsert }) => {
     IdPosition: "",
     Password: "",
     Salary: "",
-    HiringDate: "",
+    HiringDate: date,
   });
 
-  const [employees, setEmployees] = useState(null);
+  // const [employees, setEmployees] = useState(null);
 
   const employee = {
     //IdEmployee: selectedEmployee.IdEmployee,
@@ -52,18 +64,6 @@ const EmployeeInsertForm = ({ setModalInsert }) => {
     HiringDate: selectedEmployee.HiringDate,
   };
 
-  const [directions, setDirections] = useState([]);
-
-  const [permissions, setPermissions] = useState([]);
-
-  const [positions, setPositions] = useState([]);
-
-  const [date, setDate] = useState(new Date());
-
-  const [result, setResult] = useState("");
-
-  const [resultAlert, setResultAlert] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSelectedEmployee((prevState) => ({
@@ -77,14 +77,13 @@ const EmployeeInsertForm = ({ setModalInsert }) => {
     addEmployee(employee).then((result) => {
       setResult(result);
       openCloseResultAlert();
+      refreshList();
     });
   };
 
   const openCloseResultAlert = () => {
     setResultAlert(!resultAlert);
   };
-
-  const refreshListEmployee = () => {};
 
   useEffect(() => {
     getAllDirections().then((directions) => {
@@ -112,6 +111,7 @@ const EmployeeInsertForm = ({ setModalInsert }) => {
               label="IdCard"
               onChange={handleChange}
               required
+              type="number"
               onInput={(e) => {
                 e.target.value = Math.max(
                   0,
@@ -150,6 +150,7 @@ const EmployeeInsertForm = ({ setModalInsert }) => {
             <TextField
               name="Phone"
               label="Phone"
+              type="number"
               onChange={handleChange}
               required
               onInput={(e) => {
@@ -179,6 +180,7 @@ const EmployeeInsertForm = ({ setModalInsert }) => {
             <TextField
               name="Salary"
               label="Salary"
+              type="number"
               onChange={handleChange}
               required
               onInput={(e) => {

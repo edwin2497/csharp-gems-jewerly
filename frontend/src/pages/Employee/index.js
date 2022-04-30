@@ -10,26 +10,19 @@ import {
   TableHead,
   TableContainer,
   Paper,
-  TextField,
   Modal,
-  InputLabel,
-  Grid,
-  Select,
-  MenuItem,
-  Alert,
-  Collapse,
-  IconButton,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
-import { getAllEmployees, getEmployeeById } from "../../services/Employee";
+import { getAllEmployees } from "../../services/Employee";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Employee.css";
 import EmployeeInsertForm from "../../components/Employee/Insert/EmployeeInsertForm";
 import EmployeeDeleteForm from "../../components/Employee/Delete/EmployeeDeleteForm";
 import EmployeeUpdateForm from "../../components/Employee/Update/EmployeeUpdateForm";
+//import Datatable from "../../components/Employee/Datatable";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -46,27 +39,6 @@ const useStyles = makeStyles((theme) => ({
   iconos: {
     cursor: "pointer",
   },
-  // inputMaterial: {
-  //   width: "100%",
-  //   padding: "10px",
-  //   marginTop: "10px",
-  // },
-  // select: {
-  //   padding: "10px",
-  //   marginTop: "10px",
-  //   width: "100%",
-  // },
-  // btnContainer: {
-  //   padding: "10px",
-  //   marginTop: "10px",
-  //   width: "100%",
-  //   display: "inline-block",
-  // },
-  // datePicker: {
-  //   padding: "10px",
-  //   marginTop: "10px",
-  //   width: "100%",
-  // },
 }));
 
 const Employee = () => {
@@ -129,9 +101,18 @@ const Employee = () => {
     });
   }, []);
 
+  const refreshList = () => {
+    getAllEmployees().then((employees) => {
+      setEmployees(employees);
+    });
+  };
+
   const bodyInsert = (
     <div className={styles.modal}>
-      <EmployeeInsertForm setModalInsert={setModalInsert} />
+      <EmployeeInsertForm
+        setModalInsert={setModalInsert}
+        refreshList={refreshList}
+      />
     </div>
   );
 
@@ -141,6 +122,7 @@ const Employee = () => {
         setModalEdit={setModalEdit}
         selectedEmployee={selectedEmployee}
         setSelectedEmployee={setSelectedEmployee}
+        refreshList={refreshList}
       />
     </div>
   );
@@ -150,15 +132,17 @@ const Employee = () => {
       <EmployeeDeleteForm
         setModalDelete={setModalDelete}
         selectedEmployee={selectedEmployee}
+        refreshList={refreshList}
       />
     </div>
   );
 
   return (
+
     <div className="div-container">
       <div>
         <Toolbar>
-          <Input />
+          <Input type="text" />
           <SearchIcon />
           <Button
             variant="contained"

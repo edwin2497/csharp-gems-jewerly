@@ -1,17 +1,9 @@
-import React, {useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import React from "react";
 
 const Home = () => {
-  const { user, isLogged } = useContext(UserContext);
   return (
     <div>
       <h1>Hompage</h1>
-      {isLogged && (
-        <div>
-          <p>user:{user.FirstName}</p>
-          <p>is the user logged in?: {isLogged.toString()}</p>
-        </div>
-      )}
     </div>
   );
 };

@@ -16,6 +16,17 @@ import { getAllDirections } from "../../../services/Direction";
 import "./CustomerInsertForm.css";
 
 const CustomerInsertForm = ({ setModalInsert }) => {
+
+
+  const [directions, setDirections] = useState([]);
+
+  const [direction, setDirection] = useState("");
+
+  const [result, setResult] = useState("");
+
+  const [resultAlert, setResultAlert] = useState(false);
+
+
   const [selectedCustomer, setSelectedCustomer] = useState({
     IdCustomer: "",
     IdCard: "",
@@ -31,7 +42,6 @@ const CustomerInsertForm = ({ setModalInsert }) => {
   const [customers, setCustomers] = useState(null);
 
   const customer = {
-    //IdCustomer: selectedCustomer.IdCustomer,
     IdCard: selectedCustomer.IdCard,
     FirstName: selectedCustomer.FirstName,
     LastName1: selectedCustomer.LastName1,
@@ -41,12 +51,6 @@ const CustomerInsertForm = ({ setModalInsert }) => {
     IdDirection: selectedCustomer.IdDirection,
     Password: selectedCustomer.Password,
   };
-
-  const [directions, setDirections] = useState([]);
-
-  const [result, setResult] = useState("");
-
-  const [resultAlert, setResultAlert] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

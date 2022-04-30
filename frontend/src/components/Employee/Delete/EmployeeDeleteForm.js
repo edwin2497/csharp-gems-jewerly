@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from "react";
-import {
-  Button,
-  TextField,
-  InputLabel,
-  Grid,
-  Select,
-  MenuItem,
-  Alert,
-  Collapse,
-  IconButton,
-} from "@mui/material";
-import {
-  getAllEmployees,
-  deleteEmployeeById,
-} from "../../../services/Employee";
+import React from "react";
+import { Button } from "@mui/material";
+import { deleteEmployeeById } from "../../../services/Employee";
 import "./EmployeeDeleteForm.css";
 
-const EmployeeDeleteForm = ({ selectedEmployee, setModalDelete }) => {
+const EmployeeDeleteForm = ({
+  selectedEmployee,
+  setModalDelete,
+  refreshList,
+}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     deleteEmployeeById(selectedEmployee.IdEmployee);
+    refreshList();
+    setModalDelete(false);
   };
 
   return (
@@ -50,11 +43,11 @@ const EmployeeDeleteForm = ({ selectedEmployee, setModalDelete }) => {
           color="success"
           variant="contained"
           //onClick={() => deleteEmployeeById(selectedEmployee.IdEmployee)}
-          onClick={() => setModalDelete(false)}
         >
           Yes
         </Button>
         <Button
+          type="button"
           color="error"
           variant="contained"
           onClick={() => setModalDelete(false)}

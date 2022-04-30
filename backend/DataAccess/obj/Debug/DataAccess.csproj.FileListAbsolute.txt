@@ -25,3 +25,12 @@ C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\DataAccess\obj\Debug
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\bin\Debug\Entities.dll
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\bin\Debug\Entities.pdb
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\DataAccess\obj\Debug\DataAccess.pdb

@@ -1,22 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Business\\Business.csproj": {
+    "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Business\\Business.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Business\\Business.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {
-              "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj"
+              "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj"
               }
             }
           }
@@ -26,16 +26,16 @@
         "net48": {}
       }
     },
-    "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\DataAccess\\DataAccess.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {
-              "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj"
+              "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj"
               }
             }
           }
@@ -45,11 +45,11 @@
         "net48": {}
       }
     },
-    "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj": {
+    "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Entities\\Entities.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -60,14 +60,14 @@
         "net48": {}
       }
     },
-    "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\edwin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -88,8 +88,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\edwin\\Documents\\GitHub\\csharp-gems-jewerly\\backend\\Business\\Business.csproj"
+              "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\edwin\\Desktop\\csharp-gems-jewerly\\backend\\Business\\Business.csproj"
               }
             }
           }
@@ -123,6 +123,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.24, 3.1.24]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

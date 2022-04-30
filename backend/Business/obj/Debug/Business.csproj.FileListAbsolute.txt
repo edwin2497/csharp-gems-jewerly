@@ -37,3 +37,14 @@ C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\B
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\Business.dll
 C:\Users\edwin\Documents\GitHub\csharp-gems-jewerly\backend\Business\obj\Debug\Business.pdb
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\bin\Debug\Business.dll
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\bin\Debug\Business.pdb
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\bin\Debug\DataAccess.dll
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\bin\Debug\Entities.dll
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\bin\Debug\DataAccess.pdb
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\bin\Debug\Entities.pdb
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\obj\Debug\Business.dll
+C:\Users\edwin\Desktop\csharp-gems-jewerly\backend\Business\obj\Debug\Business.pdb
